@@ -30,6 +30,18 @@ public class MainActivity extends ActionBarActivity {
         database.setDatabase();
         cursor = database.select();
         cursor.moveToFirst();
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()) {
+            System.out.println("**********************"+StudentTable._ID+" : "
+                                                        +cursor.getString(0)+"***************************");
+            System.out.println("**********************"+StudentTable.STUDENT_COLUMN_NAME+" : "
+                                                        +cursor.getString(1)+"***************************");
+            System.out.println("**********************"+StudentTable.CLASS_COLUMN_NAME+" : "
+                                                        +cursor.getString(2)+"***************************");
+            System.out.println("**********************"+StudentTable.MARKS_COLUMN_NAME+" : "
+                                                        +cursor.getString(3)+"***************************");
+            cursor.moveToNext();
+        }
 
     }
 
